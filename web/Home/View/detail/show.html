@@ -1,0 +1,412 @@
+<extend name='layout:home-index' />
+
+<block name='con'>
+	<div class="container">
+		<hr class="tall">
+
+		<div class="row">
+			<div class="col-md-6" id='pic'>
+
+				<div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+					<foreach name='good.pic' item='vo'>
+						<div>
+							<div class="thumbnail">
+								<img alt="" class="img-responsive img-rounded" src="{$vo}">
+							</div>
+						</div>
+					</foreach>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+
+					<div class="summary entry-summary">
+
+						<h2 class="shorter"><strong>{$good['name']}</strong></h2>
+
+						<div class="review_num">
+							<span class="count" itemprop="ratingCount">{:count($pinglun_list)}</span> reviews
+						</div>
+
+						<div title="Rated 5.00 out of 5" class="star-rating">
+							<span style="width:100%"><strong class="rating">5.00</strong> out of 5</span>
+						</div>
+
+						<p class="price">
+							<span class="amount">
+
+								<font id='price' style="vertical-align: inherit;">
+								$ {$good['price']}
+								</font>
+
+							</span>
+						</p>
+
+						<p>
+							<foreach name='tags' item='tag'>
+								<span class="amount">
+								 <font style="vertical-align:inherit;font-size:20px;">
+									<button class='btn'>{$key}</button>
+								</font>&nbsp;&nbsp;:&nbsp;&nbsp;
+							<foreach name='tag' item='val'>
+									<font style="vertical-align: inherit;">
+										<button class='btn val' style='display:none;width:25%;'>{$val}</button>
+									</font>
+							</foreach>
+								</span>
+								<hr>
+							</foreach>
+
+						</p>
+
+						<p class="taller"><font style="vertical-align: inherit;">{$good['desc']}</font></p>
+
+						<form action='__MODULE__/cart/add' enctype="multipart/form-data" method="post" class="cart">
+								<input type="hidden" name="id" value='{$good['skuid']}'>
+							<div class="quantity">
+								<input type="button" class="minus" value="-">
+								<input type="text" class="input-text qty text" title="Qty" value="1" name="num" min="1" step="1">
+								<input type="button" class="plus" value="+">
+							</div>
+							<font id='num' style='vertical-align: inherit;'>{$good['num']} 件</font>
+							<button href="#" class="btn btn-primary btn-icon">Add to cart</button>
+						</form>
+
+						<div class="product_meta">
+							<span class="posted_in">Categories: <a rel="tag" href="#">Accessories</a>, <a rel="tag" href="#">Bags</a>.</span>
+						</div>
+
+					</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tabs tabs-product">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#productDescription" data-toggle="tab">描述</a></li>
+						
+						<li><a href="#productReviews" data-toggle="tab">评论({:count($pinglun_list)})</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="productDescription">
+							<p>{$good['desc']}</p>
+							<p>{$good['detail']}</p>
+						</div>
+						<div class="tab-pane" id="productInfo">
+							<table class="table table-striped push-top">
+								<tbody>
+									<tr>
+										<th>
+											Size:
+										</th>
+										<td>
+											Unique
+										</td>
+									</tr>
+									<tr>
+										<th>
+											Colors
+										</th>
+										<td>
+											Red, Blue
+										</td>
+									</tr>
+									<tr>
+										<th>
+											Material
+										</th>
+										<td>
+											100% Leather
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-pane" id="productReviews">
+							<ul class="comments">
+								<foreach name='pinglun_list' item='voo'>
+									<li>
+										<div class="comment">
+											<div class="img-thumbnail">
+												<img class="avatar" alt="" src="{$voo['touxiang']}">
+											</div>
+											<div class="comment-block">
+												<div class="comment-arrow"></div>
+												<span class="comment-by">
+													<strong>{$voo['username']} {:date('Y-m-d H:i:s',$voo['time'])}</strong>
+													<span class="pull-right">
+														<div title="Rated 5.00 out of 5" class="star-rating">
+															<span style="width:{$voo['leval']}"><strong class="rating">5.00</strong> out of 5</span>
+														</div>
+													</span>
+												</span>
+												<p>{$voo['con']}</p>
+												<p>	
+													<foreach name='voo.salepic' item='vooo'>
+														<img width='100px;' src="{$vooo}" >
+													</foreach>
+												</p>
+											</div>
+										</div>
+									</li>
+								</foreach>
+							</ul>
+							<hr class="tall">
+
+							<h4 class='pinglun' style='display:none;'>Add a review</h4>
+							<div class="row pinglun" style='display:none'>
+								<div class="col-md-12">
+
+									<form action="__MODULE__/Pinglun/add" id="submitReview" method="post" enctype='multipart/form-data'>
+									<input type="hidden" name="sku_id" value='{$good['skuid']}' />
+									<input type="hidden" name="g_id" value="{$good['id']}">
+										<div class="row">
+											<div class="form-group">
+												<div class="col-md-6">
+													<label>Select Star</label>
+													<span class="comment-by form-control">
+														<input type="hidden" name='leval' value=''>
+														<span class="pull-left">
+															<div title="Rated 5.00 out of 5" id='start'  class="star-rating">
+																<span style="width:100%"></span>
+															</div>
+														</span>
+													</span>
+												</div>
+												<div class="col-md-6">
+													<label>Select Pic</label>
+
+													<div class="input-append" >
+														
+														<span class="btn btn-default btn-file">
+															
+															<input type="file" name='path[]' multiple>
+														</span>
+														
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group">
+												<div class="col-md-12">
+													<label>Context</label>
+													<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="con" id="message"></textarea>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<input type="submit" value="Submit Review" class="btn btn-primary" data-loading-text="Loading...">
+											</div>
+										</div>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr class="tall">
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<h2>Related <strong>Products</strong></h2>
+			</div>
+
+			<ul class="products product-thumb-info-list">
+				
+			<foreach name='xg' item='xo'>
+				<!-- {:dump($xg)} -->
+				<!-- {:dump($xg)} -->
+				<li class="col-sm-3 col-xs-12 product">
+						<!-- {:dump($xg)} -->
+					<span class="product-thumb-info">
+						<a href="shop-cart.html" class="add-to-cart-product">
+							<span><i class="fa fa-shopping-cart"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加到购物车</font></font></span>
+						</a>
+						<font style="vertical-align: inherit;"><a href="shop-product-sidebar.html"><span class="product-thumb-info-image"><span class="product-thumb-info-act"><span class="product-thumb-info-act-left"><em><font style="vertical-align: inherit;">查看</font></em></span></span></span></a></font><a href="__URL__/show/id/{$xo['good_id']}">
+							<span class="product-thumb-info-image">
+								<span class="product-thumb-info-act">
+									<span class="product-thumb-info-act-left"><em><font style="vertical-align: inherit;"></font></em></span>
+									<span class="product-thumb-info-act-right"><em><i class="fa fa-plus"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 查看详情</font></font></em></span>
+								</span>
+								<img alt="" class="img-responsive" src="{$xo['path']}">
+							</span>
+						</a>
+						<span class="product-thumb-info-content">
+							<a href="shop-product-sidebar.html">
+								<h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{$xo['name']}</font></font></h4>
+								<span class="price">
+									<span class="amount">${$xo['price']}</span>
+								</span>
+							</a>
+						</span>
+					</span>
+				</li>
+			</foreach>
+
+			</ul>
+		</div>
+
+	</div>
+</block>
+
+<block name='js'>
+	<script type='text/javascript'>
+		var val_lists = {$val_lists};
+		var sku_lists = {$sku_lists};
+		var good_id = {$good['id']};
+
+		$('.val').each(function(){
+			for(var o = null in val_lists){
+				
+				if($(this).html()==val_lists[o]){
+					$(this).addClass('test');
+				}
+			}
+		})
+
+		//给每一个属性值绑定点击事件
+		$('.test').show().click(function(){
+			$(this).parent('font').siblings().each(function(){
+				$(this).find('button:eq(0)').removeClass('btn-info');
+			});
+			//当前按钮选中
+			$(this).addClass('btn-info');
+
+			//发送ajax去查询sku信息
+			var str = '';
+
+			$('.btn-info').each(function(){
+				str += '\\'+$(this).html();
+			});
+			$.ajax({
+				url:'__URL__/getsku',
+				type:'post',
+				data:{skuid:str,good_id:good_id},
+				success:function(mes){
+					if(mes=='no'){
+						alert('暂无数据');
+					}else{
+						$('#pic').empty();
+
+						eval('obj = '+mes+';');
+						var price = $(obj).attr('price');
+						var num = $(obj).attr('num');
+						var pic_arr = $(obj).attr('pic');
+						var skuid = $(obj).attr('id');
+						$('#price').html('$ '+price);
+						$('#num').html(num+' 件');
+
+						var pic_str = '';
+						$(pic_arr).each(function(){
+							// console.log(this);
+							pic_str += `<div>
+								<div class="thumbnail">
+									<img alt="" class="img-responsive img-rounded" src="${this}">
+								</div>
+							</div>`;
+						});
+
+						$(`<div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+							${pic_str}
+						</div>
+						`).appendTo($('#pic'));
+
+						//重新加载js文件
+						$.getScript('__PUBLIC__/ho/js/theme.init.js');
+
+						//更新表单(购物车中的)skuid
+						$('input[name="id"]').val(skuid);
+						//更新评论的skuid
+						$('input[name="sku_id"]').val(skuid);
+						check(skuid);
+					}
+				}
+			});
+		});
+
+
+		//初始化的选中按钮属性
+		function init(){
+			var vals = sku_lists[0].split('\\');
+			vals.shift();
+
+			$(vals).each(function(){
+				var str = this;
+				$('.test').each(function(){
+					if($(this).html()==str){
+						$(this).addClass('btn-info');
+					}
+				});
+			})
+		}
+
+		init();
+
+		function check(id){
+			$.ajax({
+				url:'__URL__/check',
+				data:{id:id},
+				success:function(mes){
+					if(mes=='yes'){
+						$('.pinglun').show();
+					}
+				}
+			});
+		}
+			check({$good['skuid']});
+
+
+		//点击+-实现更改数量
+		$('.minus,.plus').click(function(){
+			var id =$(this).parents('tr').attr('info');
+
+			if($(this).val()=='-'){
+				var num = $(this).next().val();
+				num--;
+				if(num==0) return;
+
+				$(this).next().val(num);
+				updateCart(id,'-');
+
+			}else{
+				var num = $(this).prev().val();
+				num++;
+				$(this).prev().val(num);
+				updateCart(id,'+');
+			}
+		});
+	</script>
+
+	<script type="text/javascript">
+	$('#start').click(function(ent){
+		//获取鼠标点击相对于整个body的位置
+		var mx = ent.clientX;
+
+		//获取div相对于body的位置
+		var dx = $(this).offset().left;
+
+		//获取鼠标相对div的位置
+		var x= mx-dx;
+
+		var w = $(this).width();
+		
+		var ww = parseInt(parseInt((x/w)*100)/20+1)*20;
+
+		//设置宽度
+		$(this).find('span').css('width',ww+'%');
+
+
+		//更改表单中的input
+		$('input[name="leval"]').val(ww);
+	});
+	</script>
+</block>

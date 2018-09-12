@@ -1,0 +1,224 @@
+<extend name='layout:admin-index' />
+
+<block name='content'>
+
+<div id="mws-container" class="clearfix">
+
+<!-- Inner Container Start -->
+<div class="container">
+	<!-- 信息提示 -->
+		<include file='layout:info' />
+	<!-- 信息提示 -->
+<!-- 管理员列表 -->
+	<div class="mws-panel grid_8">
+    	<div class="mws-panel-header">
+        	<span>
+        		<i class="icon-table"></i>标签列表
+        	</span>
+        </div>
+
+        <div class="mws-panel-body no-padding">
+            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
+            	<form action='__URL__/index' method='GET'>
+	                <div id="DataTables_Table_1_length" class="dataTables_length">
+	                    <label>Show 
+	                        <select size="1" name="size" aria-controls="DataTables_Table_1">
+                                <option value="2" <if condition='$_GET["size"] eq 2'></if>>2</option>
+                                <option value="12" <if condition='$_GET["size"] eq 12'></if>>12</option>
+                                <option value="14" <if condition='$_GET["size"] eq 14'></if>>14</option>
+                                <option value="16" <if condition='$_GET["size"] eq 16'></if>>16</option>
+                                <option value="18" <if condition='$_GET["size"] eq 18'></if>>18</option>
+                                <option value="20" <if condition='$_GET["size"] eq 20'></if>>20</option>
+	                        </select> entries
+	                    </label>
+	                </div>
+
+	                <div class="dataTables_filter" id="DataTables_Table_1_filter">
+	                    <label>Search: <input value = '{$Think.get.tag_name}' onclick='this.value=""' name = 'tag_name' type="text" aria-controls="DataTables_Table_1">
+                            <input type="button" id="mws-form-dialog-mdl-btn" class="btn btn-success" value="Add Tag">
+	                    	<button class='btn btn-primary'>搜索</button>
+	                    </label>
+	                </div>
+                </form>
+
+                <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
+                    <thead>
+                        <tr role="row">
+                        	<th width='10%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">ID
+                        	</th>
+
+
+                        	<th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Tag_Name
+                        	</th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 178px;">Status
+                            </th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 165px;">Action
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <foreach name='list' item='vo' key='k'>
+               				<if condition='$k%2 eq 0'>
+                        		<tr class="odd tag">
+               				<else />
+               					<tr class="even tag">
+               				</if>
+                                <td class="  ">{$vo['id']}</td>
+                                <td class="  ">{$vo['tag_name']}</td>
+                        
+                                <td class=" "><input type="checkbox" class="ibutton" onchange='fun(this)'
+                                    <if condition='$vo["status"] eq 1'>
+                                        checked
+                                    </if>
+                                ></td>
+                                
+                                <td class=" ">
+                                	<a href="__URL__/del/id/{$vo['id']}"><i class='icon-trash'></i></a> 
+                                </td>
+                            </tr>
+                        </foreach>
+                    </tbody>
+                </table>
+                
+               	<div class="dataTables_info" id="DataTables_Table_1_info">Showing 1 to 10 of 57 entries</div>
+                <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
+                    {$url}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Inner Container End -->
+
+        <!-- 模态框开始 -->
+    <div id="mws-form-dialog">
+        <form id="mws-validate" class="mws-form" enctype='multipart/form-data' action="__URL__/insert" method='post'>
+            
+            <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
+            <div class="mws-form-inline">
+                <div class="mws-form-row">
+                    <label class="mws-form-label">Tag Name:</label>
+                    <div class="mws-form-item">
+                        <input type="text" name="tag_name" class="required">
+                    </div>
+                </div>
+                <button class='btn btn-info' id='atv'>add Tag Value</button>
+                
+            </div>
+        </form>
+    </div>
+    <div class="mws-form-row" id='val' style='display:none'>
+        <label class="mws-form-label">Tag Value:</label>
+        <div class="mws-form-item">
+            <input type="text" name="val[]" value='' class="required">&nbsp;&nbsp;<i style='font-size:22px;color:red;' class='icon-remove-sign'></i>
+        </div>
+    </div>
+
+        
+    <!-- 模态框结束 -->
+                   
+        <!-- Footer -->
+        <div id="mws-footer">
+        	welcome to myweb
+        </div>
+        
+    </div>
+
+</block>
+
+<block name='js'>
+    <script type="text/javascript">
+
+    //鼠标移入一处展示属性值
+    $('.tag').hover(function(){
+
+        var data={$list1};
+        //判断移入哪一行
+        var tag_name = $(this).find('td:eq(1)').html();
+        
+        var val_list = data[tag_name];
+        //将数据插入到$(this)的下一行
+        var str = val_list.join(' / ');
+
+        //创建tr标签
+        var new_tr = $(`<tr>
+        <td colspan ='4' style='text-align:center'>${str}
+        </td>
+    </tr>`);
+
+        //插入tr
+        $(this).after(new_tr);
+
+        //tr淡出显示
+        new_tr.fadeIn('slow');
+
+        //控制显示速度
+
+
+    },function(){
+        $(this).next('tr').remove();
+    });
+
+
+    //给按钮绑定点击事件
+    $('#atv').click(function(){
+        $('#val').clone().show().removeAttr('id').insertBefore($(this));
+        event.preventDefault();
+    });
+
+    $('.icon-remove-sign').live('click',function(){
+        $(this).parents('.mws-form-row').remove();
+    });
+
+    function fun(obj){
+
+        var id = $(obj).parents('tr').find('td:eq(0)').html();
+
+        $.ajax({
+            url:'__URL__/changestatus',
+            data:{id:id},
+            type:'get',
+        });
+    }
+    //调整模态框
+    $(function(){
+        $("#mws-form-dialog").dialog({
+            autoOpen: false,
+            title: "Add Tag",
+            modal: true,
+            width: "640",
+            buttons: [{
+                text: "Submit",
+                click: function () {
+                    $(this).find('form#mws-validate').submit();
+                }
+            }]
+        });
+
+        //绑定一个class 然后在style修改z-index的值为0之后 就可以点击上传图片的那个按钮
+        $("#mws-form-dialog-mdl-btn").bind("click", function (event) {
+            $("#mws-form-dialog").dialog("option", {
+                modal: true
+            }).dialog("open");
+            $('input[type="file"]').addClass('a');//添加class 指定的z-index为0
+            event.preventDefault();
+        });
+    });
+
+     //获取当前页数
+        var p = {$p};
+        $('#DataTables_Table_1_paginate a').each(function(){
+            if(p==$(this).html()){
+                $(this).addClass('paginate_active');//paginate_button
+            }else{
+                $(this).addClass('paginate_button');//paginate_button
+            }
+            console.log(p);
+
+        });
+
+    </script>
+</block>

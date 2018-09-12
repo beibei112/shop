@@ -1,0 +1,74 @@
+<extend name='layout:admin-index' />
+
+<block name='content'>
+
+<div id="mws-container" class="clearfix">
+
+	<!-- Inner Container Start -->
+	<div class="container">
+		<!-- 信息提示 -->
+		<include file='layout:info' />
+	<!-- 信息提示 -->
+	<div class="mws-panel grid_8">
+    	<div class="mws-panel-header">
+        	<span>管理员修改</span>
+        </div>
+
+        <div class="mws-panel-body no-padding">
+        	<form class="mws-form" action="__URL__/update" method='post'>
+        	
+        	<input name='id' value='{$vo['id']}' type='hidden' />
+
+        		<div class="mws-form-inline">
+
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">Name:</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" value='{$vo['name']}' placeholder='请输入您要修改的昵称'>
+                        </div>
+                    </div>
+
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">Pic:</label>
+                        <div class="mws-form-item">
+                            <img width='300px' src="/ThinkPhp/{$vo['pic']|default="Public/Upload/aaa.jpg"}">
+                        </div>
+                    </div>
+
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">Email:</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" value='{$vo['email']}' name='email' placeholder='请输入您要修改的邮箱'>
+                        </div>
+                    </div>
+
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">Group List</label>
+        				<div class="mws-form-item">
+        					<select class="small" name='groupid'>
+                                <foreach name='grouplist' item='v'>
+            						<option value='{$v['id']}' <if condition='$vo["groupid"] eq $v["id"]'> selected </if> >{$v['group_name']}</option>
+                                </foreach>
+        					</select>
+        				</div>
+        			</div>
+                </div>
+
+        		<div class="mws-button-row">
+        			<input type="submit" value="Submit" class="btn btn-danger">
+        			<input type="reset" value="Reset" class="btn ">
+        		</div>
+        	</form>
+        </div>    	
+    </div>
+</div>
+    <!-- Inner Container End -->
+               
+    <!-- Footer -->
+    <div id="mws-footer">
+    	welcome to myweb
+    </div>
+    
+</div>
+
+</block>

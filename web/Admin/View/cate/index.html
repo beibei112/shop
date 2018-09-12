@@ -1,0 +1,135 @@
+<extend name='layout:admin-index' />
+
+<block name='content'>
+
+<div id="mws-container" class="clearfix">
+
+<!-- Inner Container Start -->
+<div class="container">
+	<!-- 信息提示 -->
+		<include file='layout:info' />
+	<!-- 信息提示 -->
+<!-- 管理员列表 -->
+	<div class="mws-panel grid_8">
+    	<div class="mws-panel-header">
+        	<span>
+        		<i class="icon-table"></i>商品分类列表
+        	</span>
+        </div>
+
+        <div class="mws-panel-body no-padding">
+            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
+            	<form action='__URL__/index' method='GET'>
+	                <div id="DataTables_Table_1_length" class="dataTables_length">
+	                    <label>Show 
+	                        <select size="1" name="size" aria-controls="DataTables_Table_1">
+                                <option value="10" <if condition='$_GET["size"] eq 10'></if>>10</option>
+                                <option value="12" <if condition='$_GET["size"] eq 12'></if>>12</option>
+                                <option value="14" <if condition='$_GET["size"] eq 14'></if>>14</option>
+                                <option value="16" <if condition='$_GET["size"] eq 16'></if>>16</option>
+                                <option value="18" <if condition='$_GET["size"] eq 18'></if>>18</option>
+                                <option value="20" <if condition='$_GET["size"] eq 20'></if>>20</option>
+	                        </select> entries
+	                    </label>
+	                </div>
+
+	                <div class="dataTables_filter" id="DataTables_Table_1_filter">
+	                    <label>Search: <input value = '{$Think.get.cate}' onclick='this.value=""' name = 'cate' type="text" aria-controls="DataTables_Table_1">
+	                    	<button class='btn btn-primary'>搜索</button>
+	                    </label>
+	                </div>
+                </form>
+
+                <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
+                    <thead>
+                        <tr role="row">
+                        	<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">ID
+                        	</th>
+
+                        	<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Cate
+                        	</th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 178px;">Pid
+                            </th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 165px;">Tag List
+                            </th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 165px;">Action
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <foreach name='list' item='vo' key='k'>
+               				<if condition='$k%2 eq 0'>
+                        		<tr class="odd" pid="{$vo['aa']}" id="{$vo['id']}" style="display:none">
+               				<else />
+               					<tr class="even" pid="{$vo['aa']}" id="{$vo['id']}" style="display:none">
+               				</if>
+                                <td class="">{$vo['id']}</td>
+                                <td class="aa">{$vo['cate']}</td>
+                                <td class="">{$vo['pid']?$vo['pid']:"顶级父类"}</td>
+                        
+                                <td class="">{:taglist($vo['id'])}
+
+                                <td class=" ">
+                                	<a href="__URL__/edit/id/{$vo['id']}"><i class='icon-pencil'></i></a> | 
+                                	<a href="__URL__/del/id/{$vo['id']}"><i class='icon-trash'></i></a> |
+                                    <a href="__URL__/smalladd/id/{$vo['id']}"> 
+                                    
+                                    <if condition="count(explode(',',$vo['path'])) eq 2 || count(explode(',',$vo['path'])) eq 3  ">
+                                       <i class='icon-magic'></i></a>
+
+                                    </if>
+                                    
+                                    <span>|</span> <a href="__URL__/edittag/id/{$vo['id']}"><i class='icon-pie-chart-3'></i></a> 
+                                </td>
+                            </tr>
+                        </foreach>
+                    </tbody>
+                </table>
+            
+               	<div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
+                {$url}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Inner Container End -->
+                   
+        <!-- Footer -->
+        <div id="mws-footer">
+        	welcome to myweb
+        </div>
+        
+    </div>
+
+</block>
+
+<block name='js'>
+    <script type="text/javascript">
+        //获取当前页数
+        var p = {$p};
+        $('#DataTables_Table_1_paginate a').each(function(){
+            if(p==$(this).html()){
+                $(this).addClass('paginate_active');//paginate_button
+            }else{
+                $(this).addClass('paginate_button');//paginate_button
+            }
+            console.log(p);
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $("tr[pid='0']").css("display","").children('.aa').click(test);
+
+        function test(){
+            $("tr[pid='"+$(this).parent().attr("id")+"']").toggle().children('.aa').click(test).each(function(){
+                $("tr[pid='"+$(this).parent().attr("id")+"']").hide();
+            });
+        }
+    </script>
+</block>

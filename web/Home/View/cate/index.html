@@ -1,0 +1,180 @@
+<extend name='layout:home-index' />
+
+<block name='con'>
+	<section class="page-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li class="active">Pages</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>{$cate['cate']}</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+
+	<foreach name='tag_list' item='vo'>
+		<ul class="nav nav-pills sort-source" data-option-key="filter">
+			<li d class="" style='font-size:25px;width:150px;height:40px;'><a href="#">{$key}</a></li>
+			<foreach name='vo' item='voo'>
+				<li class="tag"><a href="#" style='color:#ccc'>{$voo}</a></li>
+			</foreach>
+		</ul>
+	<hr>
+	</foreach>
+
+	<div class="row">
+		
+		<ul class="team-list sort-destination" id='goods' data-sort-id="team" style="position: relative; height: 903.468px;">
+			<foreach name='list' item='vo'>
+			<li class="col-md-3 col-sm-6 col-xs-12" style="position: relative;">
+				<div class="team-item thumbnail" style='width:262px;height:393px;'>
+				<a href="__MODULE__/Detail/show/id/{$vo['id']}" class="thumb-info team">
+					<img class="img-responsive" src="{$vo['path']}">
+					<span class="thumb-info-title">
+						<span class="thumb-info-inner">{$vo['name']}</span>
+						<span class="thumb-info-type">{:getPrice($vo['id'])}</span>
+					</span>
+				</a>
+				<span class="thumb-info-caption">
+				<a href="__MODULE__/Detail/show/id/{$vo['id']}" style='text-decoration:none;' class="thumb-info team">
+					<p style="height: 90px;">{:ucwords($vo['desc'])}</p>
+						<button class='btn '>Detail</button>
+					</a>
+					<a style='position:absolute;left:150px;top:355px;' href="__MODULE__/cart/add">
+						<button class='btn '>Add Cart</button>
+					</a>
+				</span>
+			</div>
+			</li>
+			</foreach>
+
+			
+
+			
+				<!-- <li class="col-md-3 col-sm-6 col-xs-12 " style="position: absolute; left: 292px; top: 0px; display:none;">
+				<div class="team-item thumbnail">
+					<a href="about-me.html" class="thumb-info team">
+						<img class="img-responsive" alt="" src="__PUBLIC__/ho/img/team/team-2.jpg">
+						<span class="thumb-info-title">
+							<span class="thumb-info-inner">Jessica Doe</span>
+							<span class="thumb-info-type">Marketing</span>
+						</span>
+					</a>
+					<span class="thumb-info-caption" >
+						<p style="height: 90px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<span class="thumb-info-social-icons">
+							<a rel="tooltip" data-placement="bottom" target="_blank" href="http://www.facebook.com" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+							<a rel="tooltip" data-placement="bottom" href="http://www.twitter.com" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+							<a rel="tooltip" data-placement="bottom" href="http://www.linkedin.com" data-original-title="Linkedin"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
+						</span>
+					</span>
+				</div>
+				</li> -->
+		</ul>
+	</div>
+
+</div>
+
+
+	<li class="col-md-3 col-sm-6 col-xs-12" id='clone' style="position: relative; display:none">
+		<div class="team-item thumbnail" style='width:262px;height:393px;'>
+		<a href="__MODULE__/Detail/show/id/{$vo['id']}" class="thumb-info team">
+			<img class="img-responsive" alt="" src="{$vo['path']}">
+			<span class="thumb-info-title">
+				<span class="thumb-info-inner">{$vo['name']}</span>
+				<span class="thumb-info-type">{:getPrice($vo['id'])}</span>
+			</span>
+		</a>
+		<span class="thumb-info-caption">
+			
+				<p style="height: 90px;">{:ucwords($vo['desc'])}</p>
+					<span class='btn '>Detail</span>
+			
+				<button class='btn '>Add Cart</button>
+		</span>
+	</div>
+	</li>
+
+
+	<li class="col-md-3 col-sm-6 col-xs-12" id='clone' style="position: relative; display:none">
+		<div class="team-item thumbnail" style='width:262px;height:393px;'>
+		<a href="" class="thumb-info team">
+			<img class="img-responsive" alt="" src="{$vo['path']}">
+			<span class="thumb-info-title">
+				<span class="thumb-info-inner">{$vo['name']}</span>
+				<span class="thumb-info-type">{:getPrice($vo['id'])}</span>
+			</span>
+		</a>
+		<span class="thumb-info-caption">
+			<p style="height: 90px;">{:ucwords($vo['desc'])}</p>
+			<!-- <button class='btn '>Detail</button> -->
+			<button class='btn '>Add Cart</button>
+		</span>
+	</div>
+	</li>
+</block>
+<block name='js'>
+	<script type='text/javascript'>
+	$('.tag').click(function(){
+		$(this).siblings().removeClass('active');
+
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+		}else{
+			$(this).addClass('active');
+		}
+
+		var tag_val = '';
+		$('.tag[class="tag active"]').each(function(){
+			tag_val+= '\\'+$(this).find('a').html();
+		});
+
+		var cate_id = {$cate['id']};
+
+		//发送ajax
+		$.ajax({
+			url:'__URL__/getGoodsByTag',
+			data:{'cate_id':cate_id,'tag_val':tag_val},
+			type:'post',
+			dataType:'json',
+			success:function(mes){
+				//清空ul中的默认商品
+				$('#goods').empty();
+				// console.log(mes);
+				for(var o = null in mes){
+
+					var name = $(mes[o]).attr('name');
+					var desc = $(mes[o]).attr('desc');
+					var sku = $(mes[o]).attr('sku');
+					var id = $(mes[o]).attr('id');
+
+					$(sku).each(function(){
+						var skuid = $(this).attr('skuid');
+						//克隆一个新的Li
+						var newli = $('#clone').clone().show().removeAttr('id');
+						newli.find('img').attr('src',$(this).attr('path'));
+						newli.find('.thumb-info-inner').html(name);
+						newli.find('.thumb-info-type').html($(this).attr('price'));
+						newli.find('p').html(desc);
+
+						//修改 a的跳转地址
+						newli.find('a').attr('href','__MODULE__/Detail/show/id/'+id);
+
+						//li插入到文档中
+						$('#goods').append(newli);
+					})
+				}
+			}
+		});
+	});
+	</script>
+</block>

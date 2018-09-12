@@ -1,0 +1,19 @@
+<if condition='count($_SESSION["jump"]["success"]) gt 0'>
+
+	<div class="mws-form-message success">
+		<ol>
+			{:success()}
+
+		</ol>
+	</div>
+</if>
+
+<if condition='count($_SESSION["jump"]["error"]) gt 0'>
+	<div class="mws-form-message error">
+		
+		<ul>
+			{:error()}
+		</ul>
+
+	</div>
+</if>

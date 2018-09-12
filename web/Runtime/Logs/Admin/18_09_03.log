@@ -1,0 +1,742 @@
+[ 2018-09-03T09:35:39+08:00 ] 127.0.0.1 /index.php/admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000999s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000999s ]
+NOTIC: [8] Undefined variable: flag C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\093c6d77fa295b053e512c27b6f901d1.php 第 52 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001489s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2018-09-03T09:35:47+08:00 ] 127.0.0.1 /index.php/admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: flag C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\093c6d77fa295b053e512c27b6f901d1.php 第 52 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001496s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002508s ]
+
+[ 2018-09-03T09:36:00+08:00 ] 127.0.0.1 /index.php/Admin/Login/checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `adminuser` WHERE ( email = "913822325@qq.com" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `adminuser` SET `last_login`='1535938560',`ip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0080s ]
+
+[ 2018-09-03T09:36:01+08:00 ] 127.0.0.1 /index.php/admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0090s ]
+SQL: SELECT adminuser.*,grouplist.group_name FROM `adminuser` INNER JOIN grouplist on adminuser.groupid = grouplist.id  WHERE ( adminuser.id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7025b44a7596185f4a54002eca98357c.php 第 424 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7025b44a7596185f4a54002eca98357c.php 第 431 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001501s ]
+
+[ 2018-09-03T09:36:07+08:00 ] 127.0.0.1 /index.php/Admin/cate/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.0085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM cate as c1 LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+SQL: SELECT c1.id,c1.cate,c1.path,c1.pid as aa,c2.cate as pid FROM cate as c1 left join cate as c2 on c1.pid=c2.id   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000501s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 452 行.
+NOTIC: [8] Undefined index: cate C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 458 行.
+SQL: SHOW COLUMNS FROM `cate_tag` [ RunTime:0.0080s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=3 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=4 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=5 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=9 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=10 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=11 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=12 )  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 508 行.
+NOTIC: [8] Undefined variable: p C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 567 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-09-03T09:36:09+08:00 ] 127.0.0.1 /index.php/Admin/cate/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.0100s ]
+SQL: SELECT *,concat(path,id) as p FROM `cate` ORDER BY p  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000501s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\d0068b3940caaafd8a6a2f451e7dd9f6.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\d0068b3940caaafd8a6a2f451e7dd9f6.php 第 425 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014072s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014072s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-03T09:36:10+08:00 ] 127.0.0.1 /index.php/Admin/cate/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.0085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM cate as c1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+SQL: SELECT c1.id,c1.cate,c1.path,c1.pid as aa,c2.cate as pid FROM cate as c1 left join cate as c2 on c1.pid=c2.id   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000440s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000440s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 452 行.
+NOTIC: [8] Undefined index: cate C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 458 行.
+SQL: SHOW COLUMNS FROM `cate_tag` [ RunTime:0.0075s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=2 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=3 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=4 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=5 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=9 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=10 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=11 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=12 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 508 行.
+NOTIC: [8] Undefined variable: p C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 567 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000499s ]
+
+[ 2018-09-03T09:36:12+08:00 ] 127.0.0.1 /index.php/Admin/good/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `good` [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `good` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT good.*,pic.path,cate.cate FROM `good` INNER JOIN cate on good.cate_id=cate.id INNER JOIN pic on good.id=pic.good_id  GROUP BY pic.good_id LIMIT 0,2   [ RunTime:0.0295s ]
+SQL: SHOW COLUMNS FROM `sku` [ RunTime:0.0100s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=38 )  [ RunTime:0.0004s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=40 )  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 452 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013589s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013589s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000937s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000937s ]
+
+[ 2018-09-03T09:36:14+08:00 ] 127.0.0.1 /index.php/Admin/good/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001498s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.0220s ]
+SQL: SELECT *,concat(path,id) as p FROM `cate` ORDER BY p  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000568s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000568s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\6687c23b88e7b6bf26acae76c4ace03e.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\6687c23b88e7b6bf26acae76c4ace03e.php 第 425 行.
+NOTIC: [8] Undefined index: cate_id C:\xampp\htdocs\ThinkPhp\web\Common\Common\function.php 第 133 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013591s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001503s ]
+
+[ 2018-09-03T10:02:14+08:00 ] 127.0.0.1 /index.php/Admin/adminuser/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001319s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT adminuser.*,grouplist.group_name FROM `adminuser` INNER JOIN grouplist on adminuser.groupid=grouplist.id  LIMIT 0,2   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 450 行.
+NOTIC: [8] Undefined index: email C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 456 行.
+SQL: SHOW COLUMNS FROM `grouplist` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `grouplist` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `grouplist` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001056s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-03T10:02:21+08:00 ] 127.0.0.1 /index.php/Admin/adminuser/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001495s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\afa00afacbc3660f8115f76b9896e115.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\afa00afacbc3660f8115f76b9896e115.php 第 425 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029497s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001963s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005515s ]
+
+[ 2018-09-03T10:03:07+08:00 ] 127.0.0.1 /index.php/Admin/good/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `good` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `good` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT good.*,pic.path,cate.cate FROM `good` INNER JOIN cate on good.cate_id=cate.id INNER JOIN pic on good.id=pic.good_id  GROUP BY pic.good_id LIMIT 0,2   [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `sku` [ RunTime:0.0115s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=38 )  [ RunTime:0.0010s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=40 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 452 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015998s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001002s ]
+
+[ 2018-09-03T10:03:17+08:00 ] 127.0.0.1 /index.php/Admin/adminuser/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT adminuser.*,grouplist.group_name FROM `adminuser` INNER JOIN grouplist on adminuser.groupid=grouplist.id  LIMIT 0,2   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 450 行.
+NOTIC: [8] Undefined index: email C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\639c2c37365de442ea0066d93080fb36.php 第 456 行.
+SQL: SHOW COLUMNS FROM `grouplist` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `grouplist` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `grouplist` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027515s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027515s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-03T10:03:20+08:00 ] 127.0.0.1 /index.php/Admin/Adminuser/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `grouplist` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `grouplist`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `adminuser` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\0ba2df0a7f34a6e35d39e80faca36a43.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\0ba2df0a7f34a6e35d39e80faca36a43.php 第 425 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001501s ]
+
+[ 2018-09-03T10:03:28+08:00 ] 127.0.0.1 /index.php/Admin/adminuser/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000499s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001548s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000498s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000498s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\afa00afacbc3660f8115f76b9896e115.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\afa00afacbc3660f8115f76b9896e115.php 第 425 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001486s ]
+
+[ 2018-09-03T10:03:33+08:00 ] 127.0.0.1 /index.php/Admin/adminuser/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\afa00afacbc3660f8115f76b9896e115.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\afa00afacbc3660f8115f76b9896e115.php 第 425 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012998s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001499s ]
+
+[ 2018-09-03T10:03:42+08:00 ] 127.0.0.1 /index.php/Admin/cate/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000461s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM cate as c1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+SQL: SELECT c1.id,c1.cate,c1.path,c1.pid as aa,c2.cate as pid FROM cate as c1 left join cate as c2 on c1.pid=c2.id   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000502s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000502s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 452 行.
+NOTIC: [8] Undefined index: cate C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 458 行.
+SQL: SHOW COLUMNS FROM `cate_tag` [ RunTime:0.0080s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=3 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=4 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=5 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=9 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=10 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=11 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=12 )  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 508 行.
+NOTIC: [8] Undefined variable: p C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 567 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024996s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001021s ]
+
+[ 2018-09-03T10:03:44+08:00 ] 127.0.0.1 /index.php/Admin/cate/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM cate as c1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Undefined variable: page C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+NOTIC: [8] Trying to get property of non-object C:\xampp\htdocs\ThinkPhp\web\Admin\Controller\CateController.class.php 第 59 行.
+SQL: SELECT c1.id,c1.cate,c1.path,c1.pid as aa,c2.cate as pid FROM cate as c1 left join cate as c2 on c1.pid=c2.id   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 452 行.
+NOTIC: [8] Undefined index: cate C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 458 行.
+SQL: SHOW COLUMNS FROM `cate_tag` [ RunTime:0.0105s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=3 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=4 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=5 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=9 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=10 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=11 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM cate_tag as ct INNER JOIN tag as t on ct.tag_id=t.id  WHERE ( ct.cate_id=12 )  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 508 行.
+NOTIC: [8] Undefined variable: p C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7cd7914610a4dc0bb7e638ef6dc1f8b0.php 第 567 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001002s ]
+
+[ 2018-09-03T10:03:55+08:00 ] 127.0.0.1 /index.php/Admin/tag/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `tag` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `tag`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tag_val` [ RunTime:0.0085s ]
+SQL: SELECT v.val FROM tag_val as tv INNER JOIN val as v on tv.val_id=v.id  WHERE ( tv.tag_id=29 )  [ RunTime:0.0010s ]
+SQL: SELECT v.val FROM tag_val as tv INNER JOIN val as v on tv.val_id=v.id  WHERE ( tv.tag_id=30 )  [ RunTime:0.0005s ]
+SQL: SELECT v.val FROM tag_val as tv INNER JOIN val as v on tv.val_id=v.id  WHERE ( tv.tag_id=31 )  [ RunTime:0.0005s ]
+SQL: SELECT v.val FROM tag_val as tv INNER JOIN val as v on tv.val_id=v.id  WHERE ( tv.tag_id=34 )  [ RunTime:0.0000s ]
+SQL: SELECT v.val FROM tag_val as tv INNER JOIN val as v on tv.val_id=v.id  WHERE ( tv.tag_id=36 )  [ RunTime:0.0000s ]
+SQL: SELECT v.val FROM tag_val as tv INNER JOIN val as v on tv.val_id=v.id  WHERE ( tv.tag_id=37 )  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tag` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `tag` LIMIT 0,2   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000501s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 452 行.
+NOTIC: [8] Undefined index: tag_name C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\f65743a2b5c26101f46f965f50e4d9df.php 第 458 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001501s ]
+
+[ 2018-09-03T10:03:58+08:00 ] 127.0.0.1 /index.php/Admin/val/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `val` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `val`  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `val` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `val` LIMIT 0,4   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 450 行.
+NOTIC: [8] Undefined index: val C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 456 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001500s ]
+
+[ 2018-09-03T10:04:09+08:00 ] 127.0.0.1 /index.php/Admin/val/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+SQL: SHOW COLUMNS FROM `val` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `val`  [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `val` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `val` LIMIT 0,4   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 450 行.
+NOTIC: [8] Undefined index: val C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\e19c68eb935993987813e7162cdbc85d.php 第 456 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2018-09-03T10:04:11+08:00 ] 127.0.0.1 /index.php/Admin/good/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `good` [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `good` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT good.*,pic.path,cate.cate FROM `good` INNER JOIN cate on good.cate_id=cate.id INNER JOIN pic on good.id=pic.good_id  GROUP BY pic.good_id LIMIT 0,2   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `sku` [ RunTime:0.0101s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=38 )  [ RunTime:0.0005s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=40 )  [ RunTime:0.0070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 452 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002012s ]
+
+[ 2018-09-03T10:04:58+08:00 ] 127.0.0.1 /index.php/Admin/good/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+SQL: SHOW COLUMNS FROM `good` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `good` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT good.*,pic.path,cate.cate FROM `good` INNER JOIN cate on good.cate_id=cate.id INNER JOIN pic on good.id=pic.good_id  GROUP BY pic.good_id LIMIT 0,2   [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `sku` [ RunTime:0.0104s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=38 )  [ RunTime:0.0005s ]
+SQL: SELECT sku.*,pic.path FROM `sku` INNER JOIN pic on sku.id=pic.sku_id  WHERE ( sku.good_id=40 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 450 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 451 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\5e569ad068c70ba99bd24050e5fc9bec.php 第 452 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-09-03T10:05:05+08:00 ] 127.0.0.1 /index.php/Admin/picc/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+SQL: SHOW COLUMNS FROM `picc` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `picc`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 418 行.
+NOTIC: [8] Undefined index: jump C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 425 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 447 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 448 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 449 行.
+NOTIC: [8] Undefined index: size C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 450 行.
+NOTIC: [8] Undefined index: email C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 456 行.
+NOTIC: [8] Undefined variable: url C:\xampp\htdocs\ThinkPhp\web\Runtime\Cache\Admin\7a2d97958915e7fdb11da5305c119cd7.php 第 495 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000999s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001510s ]
+

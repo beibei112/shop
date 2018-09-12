@@ -1,0 +1,146 @@
+<extend name='layout:admin-index' />
+
+<block name='content'>
+
+<style>
+    .a{
+        z-index:0 !important;
+    }
+</style>
+
+   <div id="mws-container" class="clearfix">
+    
+        <!-- Inner Container Start -->
+    <div class="container">
+        <!-- 导入提示模板 -->
+            <include file='layout:info' />
+        <!-- 导入提示模板END -->
+        <div class="mws-panel grid_4">
+            <div class="mws-panel-header">
+                <span>information</span>
+            </div>
+
+            <div class="mws-panel-body no-padding">
+                <form class="mws-form" action="" method=''>
+                    <div class="mws-form-inline">
+                        <div class="mws-form-row">
+                            <label class="mws-form-label">Name:</label>
+                            <div class="mws-form-item">
+                                <input type="text" class="small" readonly name='Tom' value='{$vo['name']|default="Admin"}'>
+                            </div>
+                        </div>
+
+                        <div class="mws-form-row">
+                            <label class="mws-form-label">Email:</label>
+                            <div class="mws-form-item">
+                                <input type="text" class="small" readonly name='{$vo['email']}' value='{$vo['email']}'>
+                            </div>
+                        </div>
+
+                        <div class="mws-form-row">
+                            <label class="mws-form-label">Default_Pic:</label>
+                            <div class="mws-form-item">
+                                <img width='300px' src="/ThinkPhp/{$vo['pic']|default="Public/Upload/aaa.jpg"}">
+                            </div>
+                        </div>
+
+                        <div class="mws-form-row">
+                            <label class="mws-form-label">last_Login:</label>
+                            <div class="mws-form-item">
+                                <input type="text" class="small" readonly value='{:date("Y-m-d H:i:s",$vo['last_login'])}'>
+                            </div>
+                        </div>
+
+                        <div class="mws-form-row">
+                            <label class="mws-form-label">last_LoginIP:</label>
+                            <div class="mws-form-item">
+                                <input type="text" class="small" readonly value=
+                                    <if condition='$vo["ip"] eq "::1"'>
+                                        127.168.5.27
+                                    </if>
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mws-form-row">
+                            <label class="mws-form-label">Group:</label>
+                            <div class="mws-form-item">
+                                <input type="text" class="small" value='{$vo['group_name']}' readonly>
+                            </div>
+                        </div>
+                    <div class="mws-button-row">
+                        <input type="button" id="mws-form-dialog-mdl-btn" class="btn btn-success" value="Edit">
+                    
+                    </div>
+                </form>
+            </div>      
+        </div>
+    </div>
+
+    <!-- 模态框开始 -->
+    <div id="mws-form-dialog">
+        <form id="mws-validate" class="mws-form" enctype='multipart/form-data' action="__URL__/update" method='post'>
+            
+            <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
+            <div class="mws-form-inline">
+                <div class="mws-form-row">
+                    <label class="mws-form-label">Name:</label>
+                    <div class="mws-form-item">
+                        <input type="text" name="name" class="required">
+                    </div>
+                </div>
+                
+                <div class="mws-form-row">
+                    <label class="mws-form-label">Select Pic:</label>
+                    <div class="mws-form-item">
+                        <input type="file" name="pic" class="required">
+                       
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+        
+    <!-- 模态框结束 -->
+        <!-- Inner Container End -->
+                   
+        <!-- Footer -->
+        <div id="mws-footer">
+            welcome to myweb
+        </div>
+        
+    </div>
+
+</block>
+
+
+<block name='js'>
+    <script type="text/javascript">
+
+    //每个这个模块都会改名为edit Person information  可以调节宽度
+    $(function(){
+        $("#mws-form-dialog").dialog({
+            autoOpen: false,
+            title: "Edit Person information",
+            modal: true,
+            width: "640",
+            buttons: [{
+                text: "Submit",
+                click: function () {
+                    $(this).find('form#mws-validate').submit();
+                }
+            }]
+        });
+
+        //绑定一个class 然后在style修改z-index的值为0之后 就可以点击上传图片的那个按钮
+        $("#mws-form-dialog-mdl-btn").bind("click", function (event) {
+            $("#mws-form-dialog").dialog("option", {
+                modal: true
+            }).dialog("open");
+            $('input[type="file"]').addClass('a');//添加class 指定的z-index为0
+            event.preventDefault();
+        });
+    });
+    </script>
+</block>

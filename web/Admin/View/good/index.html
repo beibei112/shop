@@ -1,0 +1,173 @@
+<extend name='layout:admin-index' />
+
+<block name='content'>
+
+<div id="mws-container" class="clearfix">
+
+<!-- Inner Container Start -->
+<div class="container">
+    <!-- 信息提示 -->
+        <include file='layout:info' />
+    <!-- 信息提示 -->
+<!-- 管理员列表 -->
+    <div class="mws-panel grid_8">
+        <div class="mws-panel-header">
+            <span>
+                <i class="icon-table"></i>商品列表
+            </span>
+        </div>
+
+        <div class="mws-panel-body no-padding">
+            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
+                <form action='__URL__/index' method='get'>
+                    <div id="DataTables_Table_1_length" class="dataTables_length">
+                        <label>Show 
+                            <select size="1" name="size" aria-controls="DataTables_Table_1">
+                                <option value="2" <if condition='$_GET["size"] eq 2'></if>>2</option>
+                                <option value="12" <if condition='$_GET["size"] eq 12'></if>>12</option>
+                                <option value="14" <if condition='$_GET["size"] eq 14'></if>>14</option>
+                                <option value="16" <if condition='$_GET["size"] eq 16'></if>>16</option>
+                                <option value="18" <if condition='$_GET["size"] eq 18'></if>>18</option>
+                                <option value="20" <if condition='$_GET["size"] eq 20'></if>>20</option>
+                            </select> entries
+                        </label>
+                    </div>
+
+                    <div class="dataTables_filter" id="DataTables_Table_1_filter">
+                        <label>Search: <input value = '' onclick='this.value=""' name = 'name' type="text" aria-controls="DataTables_Table_1">
+                            
+                            <button class='btn btn-primary'>搜索</button>
+                        </label>
+                    </div>
+                </form>
+
+                <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
+                    <thead>
+                        <tr role="row">
+                            <th width='10%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">ID
+                            </th>
+
+                             <th width='10%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Cate
+                            </th>
+
+
+                            <th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Pic
+                            </th>
+
+                            <th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Name
+                            </th>
+
+                            <th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Company
+                            </th>
+
+                            <th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Sale
+                            </th>
+
+                            <th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Click Num
+                            </th>
+
+                            <th width='30%' class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 133px;">Staus
+                            </th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 178px;">Desc
+                            </th>
+
+                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 165px;">Action
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <foreach name='list' item='vo' key='k'>
+                            <if condition='$k%2 eq 0'>
+                                <tr class="odd">
+                            <else />
+                                <tr class="even">
+                            </if>
+                                <td class="  ">{$vo['id']}</td>
+                                <td class="  ">{$vo['cate']}</td>
+                                <td class="  " width='8%'><img src="{$vo['path']}" alt=""></td>
+                                <td class="  ">
+                                    
+                                    <div class="btn-group">
+
+                                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                                            {$vo['name']}<span class="caret"></span>
+                                        </button>
+
+                                        <ul class="dropdown-menu pull-right" style='width:320px;'>
+                                            <foreach name='vo.sku' item='sku'>
+
+                                                <li style='width:320px;'>
+                                                    <a href="#">
+                                                        <img src="{$sku['path']}" width="40px">
+                                                        {$sku['skuid']}
+                                                        {$sku['price']}$
+                                                        {$sku['num']}件
+                                                    </a>
+                                                </li>
+
+                                            </foreach>
+
+                                        </ul>
+
+                                    </div>
+                                
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#">Search Music Online</a></li>
+                                        <li><a href="#">Music News</a></li>
+                                        <li><a href="#">Exit Media Player</a></li>
+                                    </ul>
+
+                                </td>
+                                <td class="  ">{$vo['company']}</td>
+                                <td class="  ">{$vo['sale']}</td>
+                                <td class="  ">{$vo['clicknum']}</td>
+                                <td class="  ">{:goodStatus($vo['status'])}</td>
+                                <td class="  ">
+                                    <div class="" rel="popover" data-trigger="hover" data-placement="left" data-content="{$vo['desc']}" data-original-title="Good Desc">{$vo['desc']| substr=0,15}...</div>
+
+                                </td>
+                                
+                                <td class=" " width='15%'>
+                                    <a href="__URL__/action/id/{$vo['id']}"><i class='btn btn-danger btn-small'>上架 /下架</i></a> 
+                                    <a href="__URL__/editDetail/id/{$vo['id']}"><i class='btn btn-warning btn-small'>更改详情</i></a> 
+                                </td>
+                            </tr>
+                        </foreach>
+                    </tbody>
+                </table>
+                
+                <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
+                {$url}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Inner Container End -->
+                   
+        <!-- Footer -->
+        <div id="mws-footer">
+            welcome to myweb
+        </div>
+        
+    </div>
+
+</block>
+
+<block name='js'>
+    <script type="text/javascript">
+         //获取当前页数
+        var p = {$p};
+        $('#DataTables_Table_1_paginate a').each(function(){
+            if(p==$(this).html()){
+                $(this).addClass('paginate_active');//paginate_button
+            }else{
+                $(this).addClass('paginate_button');//paginate_button
+            }
+            console.log(p);
+
+        });
+    </script>
+</block>

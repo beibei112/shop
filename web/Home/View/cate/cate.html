@@ -1,0 +1,96 @@
+<nav class="nav-main mega-menu">
+	<ul class="nav nav-pills nav-main" id="mainMenu">
+		<foreach name='list' item='vo'>
+		<li class="dropdown mega-menu-item mega-menu-fullwidth">
+			<a class="dropdown-toggle" href="__MODULE__/cate/index/id/{$vo['id']}">
+				{$vo['cate']}
+				<i class="fa fa-angle-down"></i>
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+					<div class="mega-menu-content">
+						<div class="row">
+						<foreach name='vo["sub"]' item='voo'>
+							<div class="col-md-3">
+								<ul class="sub-menu">
+									<li>
+										<a href="__MODULE__/cate/index/id/{$voo['id']}"><span class="mega-menu-sub-title">{$voo['cate']}</span></a>
+										<ul class="sub-menu">
+										<foreach name='voo["sub"]' item='vooo'>
+											<li><a href="__MODULE__/cate/index/id/{$vooo['id']}">{$vooo['cate']}</a></li>
+										</foreach>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</foreach>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</li>
+		</foreach>
+
+
+
+		<li class="dropdown mega-menu-item mega-menu-shop">
+			<a class="dropdown-toggle extra" href="#"><i class="fa fa-angle-down"></i></a>
+			<a class="dropdown-toggle mobile-redirect disabled" href="__MODULE__/cart/index">
+				<i class="fa fa-shopping-cart"></i> <span id='cart'>Cart ({$cart_num}) - ${$count}</span>
+				<i class="fa fa-angle-down"></i>
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+					<div class="mega-menu-content">
+						<div class="row">
+							<div class="col-md-12">
+
+								<table cellspacing="0" class="cart">
+									<tbody>
+										<foreach name='list1' item='vo1'>
+											<tr class='cc ' info={$vo1['id']}>
+												<td class="product-thumbnail">
+													<a href="__MODULE__/cart/index">
+														<img width="100" height="100" alt="" class="img-responsive" src="{$vo1['path']}">
+													</a>
+												</td>
+												<td class="product-name">
+													<a href="__MODULE__/cart/index">{$vo1['name']}<br><span class="amount"><strong>${$vo1['price']}</strong></span></a>
+												</td>
+												<td class="product-actions">
+													<a title="Remove this item" onclick='remove(this)' class="remove" href="#">
+														<i class="fa fa-times"></i>
+													</a>
+												</td>
+											</tr>
+										</foreach>
+										<tr>
+											<td class="actions" colspan="6">
+												<div class="actions-continue">
+													<input type="submit" value="View All" class="btn btn-default">
+													<input type="submit" value="Proceed to Checkout →" name="proceed" class="btn pull-right btn-primary">
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+<!-- <block name='js'>
+<script type="text/javascript">
+	var num=0;
+	$('.cc').each(function(){
+		num++;
+	});
+
+	$('#cart').html('Cart ('+num+') - $299');
+
+</script>
+</block> -->

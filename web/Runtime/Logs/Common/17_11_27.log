@@ -1,0 +1,30 @@
+[ 2017-11-27T15:11:05+08:00 ] ::1 /ThinkPhp/index.php/shop-product-sidebar.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Shop-product-sidebar
+
+[ 2017-11-27T16:08:48+08:00 ] ::1 /ThinkPhp/index.php/img/products/product-1.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Img
+
+[ 2017-11-27T18:47:48+08:00 ] ::1 /ThinkPhp/index.php/shop-product-sidebar.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Shop-product-sidebar
+
+[ 2017-11-27T18:48:50+08:00 ] ::1 /ThinkPhp/index.php/shop-product-sidebar.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Shop-product-sidebar
+
+[ 2017-11-27T18:49:08+08:00 ] ::1 /ThinkPhp/index.php/shop-product-sidebar.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Shop-product-sidebar
+
