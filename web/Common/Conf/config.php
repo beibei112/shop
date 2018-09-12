@@ -16,7 +16,7 @@ return array(
 	'DB_HOST'               =>  'localhost',
 	'DB_NAME'               =>  'thinkphp',
 	'DB_USER'               =>  'root',
-	'DB_PWD'                =>  '',
+	'DB_PWD'                =>  '131025',
 	'DB_PORT'               =>  '3306',
 
 
